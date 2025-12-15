@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bishkek Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1><i class="fas fa-snowflake"></i> Bishkek Weather</h1>
+            <button id="themeToggle">
+                <i class="fas fa-moon"></i> Switch Theme
+            </button>
+        </header>
+
+        <!-- Weather Info -->
+        <div class="weather-card current-weather">
+            <h2>Today in Bishkek <i class="fas fa-map-marker-alt"></i></h2>
+            <div class="today-info">
+                <div class="temp-big">4°C</div>
+                <div class="weather-desc">Increasing cloudiness</div>
+                <div class="details">
+                    <div><i class="fas fa-wind"></i> Wind: 3 km/h</div>
+                    <div><i class="fas fa-tint"></i> Humidity: 65%</div>
+                    <div><i class="fas fa-temperature-low"></i> Feels like: 4°C</div>
+                    <div><i class="fas fa-cloud-rain"></i> Snow chance: 5%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10-Day Forecast -->
+        <div class="weather-card">
+            <h2>10-Day Forecast <i class="fas fa-calendar-alt"></i></h2>
+            <div class="forecast" id="forecastList">
+                <!-- Forecast items will be added by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Day Details -->
+        <div class="weather-card">
+            <h2>Pick a Day for Details <i class="fas fa-calendar-day"></i></h2>
+            <div class="day-selector" id="dayButtons">
+                <!-- Day buttons will be added by JavaScript -->
+            </div>
+            <div class="day-details" id="dayDetails">
+                <h3 id="selectedDay">Wednesday 17 Dec</h3>
+                <div class="hourly-forecast" id="hourlyForecast">
+                    <!-- Hourly forecast will be added by JavaScript -->
+                </div>
+                <div class="advice-box" id="weatherAdvice">
+                    <h4><i class="fas fa-lightbulb"></i> Weather Advice</h4>
+                    <p>Wear warm clothes today! It's snowing, so bring an umbrella and wear boots.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with <i class="fas fa-heart"></i> for Bishkek | Weather data updated daily</p>
+            <p class="update-time">Last updated: December 15, 2025</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
