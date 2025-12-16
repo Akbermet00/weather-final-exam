@@ -1,4 +1,3 @@
-// Real Bishkek weather data from your table
 const weatherData = {
     current: {
         day: "Tuesday 16 Dec",
@@ -134,7 +133,6 @@ const weatherData = {
     ]
 };
 
-// Weather advice based on conditions
 function getAdvice(dayData) {
     const temp = parseInt(dayData.temp.split('/')[0]);
     const weather = dayData.weather.toLowerCase();
@@ -173,7 +171,6 @@ function getAdvice(dayData) {
     return advice;
 }
 
-// Get weather icon
 function getWeatherIcon(weather) {
     if (weather.includes("snow")) {
         return "❄️";
@@ -188,11 +185,9 @@ function getWeatherIcon(weather) {
     }
 }
 
-// Initialize the page
 $(document).ready(function() {
     console.log("Weather app loading...");
     
-    // Theme toggle
     $('#themeToggle').click(function() {
         $('body').toggleClass('dark-theme');
         const isDark = $('body').hasClass('dark-theme');
@@ -200,13 +195,11 @@ $(document).ready(function() {
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
     
-    // Check saved theme
     if (localStorage.getItem('theme') === 'dark') {
         $('body').addClass('dark-theme');
         $('#themeToggle').html('<i class="fas fa-sun"></i> Light Mode');
     }
     
-    // Fill forecast list
     const forecastList = $('#forecastList');
     weatherData.forecast.forEach(day => {
         const icon = getWeatherIcon(day.weather);
@@ -221,7 +214,6 @@ $(document).ready(function() {
         forecastList.append(item);
     });
     
-    // Create day buttons
     const dayButtons = $('#dayButtons');
     weatherData.forecast.forEach((day, index) => {
         const btn = $(`
@@ -232,7 +224,7 @@ $(document).ready(function() {
         dayButtons.append(btn);
     });
     
-    // Day button click
+  
     $('.day-btn').click(function() {
         $('.day-btn').removeClass('active');
         $(this).addClass('active');
@@ -240,10 +232,8 @@ $(document).ready(function() {
         const index = $(this).data('index');
         const day = weatherData.forecast[index];
         
-        // Update selected day
         $('#selectedDay').text(day.day);
         
-        // Update hourly forecast
         const hours = ["6 AM", "9 AM", "12 PM", "3 PM", "6 PM", "9 PM", "12 AM", "3 AM"];
         const hourlyDiv = $('#hourlyForecast');
         hourlyDiv.empty();
@@ -260,12 +250,11 @@ $(document).ready(function() {
             }
         });
         
-        // Update advice
         $('#weatherAdvice p').text(getAdvice(day));
     });
     
-    // Select first day by default
     $('.day-btn:first').click();
     
     console.log("Weather app ready!");
+
 });
