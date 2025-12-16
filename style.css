@@ -1,4 +1,3 @@
-/* Simple clean style - like a teenage girl would make */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +18,6 @@ body {
     margin: 0 auto;
 }
 
-/* Header */
 header {
     background: white;
     padding: 25px;
@@ -63,7 +61,6 @@ h1 i {
     transform: translateY(-2px);
 }
 
-/* Weather Cards */
 .weather-card {
     background: white;
     padding: 25px;
@@ -81,7 +78,6 @@ h1 i {
     gap: 10px;
 }
 
-/* Today's Weather */
 .today-info {
     text-align: center;
     padding: 20px 0;
@@ -241,8 +237,6 @@ h1 i {
     font-weight: bold;
     margin: 10px 0;
 }
-
-/* Advice Box */
 .advice-box {
     background: linear-gradient(135deg, #e6f7ff 0%, #d4edff 100%);
     padding: 25px;
@@ -264,7 +258,6 @@ h1 i {
     line-height: 1.6;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 25px;
@@ -284,7 +277,6 @@ footer i {
     color: #888;
 }
 
-/* Dark Theme */
 body.dark-theme {
     background: linear-gradient(180deg, #1a2b3c 0%, #0d1b2a 100%);
     color: #e0f0ff;
@@ -323,7 +315,6 @@ body.dark-theme h4 {
     color: #88c1ff;
 }
 
-/* Mobile Friendly */
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -358,4 +349,5 @@ body.dark-theme h4 {
     .hourly-forecast {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
+
 }
